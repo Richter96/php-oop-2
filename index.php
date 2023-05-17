@@ -1,83 +1,9 @@
 <?php
 
-class Computer
-{
-    public $cpu;
-    public $motherboard;
-    public $hard_disk;
-    public $ram;
-    public $gpu;
-    public $keyboard;
-    public $mouse;
+require_once __DIR__ . '/Models/Computer.php';
+require_once __DIR__ . '/Models/Portable.php';
+require_once __DIR__ . '/Models/Desktop.php';
 
-    public function __construct($cpu, $motherboard, $hard_disk, $ram, $gpu, $keyboard, $mouse)
-    {
-        $this->cpu = $cpu;
-        $this->motherboard = $motherboard;
-        $this->hard_disk = $hard_disk;
-        $this->ram = $ram;
-        $this->gpu = $gpu;
-        $this->keyboard = $keyboard;
-        $this->mouse = $mouse;
-    }
-    public function getComputerDetail() // ???? quando va utilizzata?
-    {
-        # code...
-    }
-}
-
-
-
-class Portable extends Computer
-{
-    //parent:: serve?
-    public $battery;
-    public $webcam;
-    public $microphone;
-    public $display;
-
-    function __construct($cpu, $motherboard, $hard_disk, $ram, $gpu, $keyboard, $mouse, string $battery, string $webcam, string $microphone, string $display)
-    {
-        parent::__construct($cpu, $motherboard, $hard_disk, $ram, $gpu, $keyboard, $mouse);
-        $this->battery = $battery;
-        $this->webcam = $webcam;
-        $this->microphone = $microphone;
-        $this->display = $display;
-    }
-}
-
-class Desktop extends Computer
-{
-    public $case;
-    public $external_speakers;
-    public $monitor;
-    public $external_webcam;
-
-    function __construct($cpu, $motherboard, $hard_disk, $ram, $gpu, $keyboard, $mouse, string $case, string $external_speakers, Monitor $monitor, string $external_webcam)
-    {
-        parent::__construct($cpu, $motherboard, $hard_disk, $ram, $gpu, $keyboard, $mouse);
-        $this->case = $case;
-        $this->external_speakers = $external_speakers;
-        $this->monitor = $monitor;
-        $this->external_webcam = $external_webcam;
-    }
-}
-
-class Monitor
-{
-    public $type;
-    public $size;
-    public $herz;
-    public $resolution;
-
-    public function __construct($type, $size, $herz, $resolution)
-    {
-        $this->type = $type;
-        $this->size = $size;
-        $this->herz = $herz;
-        $this->resolution = $resolution;
-    }
-}
 
 $computer = new Computer('processore_x', 'schedaMadre_x', 'hard_disk_x', 'ram_x', 'schedaVideo_X', 'tastiera_x', 'mouse_x');
 var_dump($computer);
