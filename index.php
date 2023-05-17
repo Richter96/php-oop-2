@@ -24,6 +24,7 @@ class Computer
 
 class PortableComputer extends Computer
 {
+
     public $battery;
     public $webcam;
     public $microphone;
@@ -37,6 +38,8 @@ class DesktopComputer
     public $monitor;
     public $external_webcam;
 }
+
+$computer_portatile = new PortableComputer(processore_x, schedaMadre_x, hard_disk_x, ram_x, schedaVideo_X, tastiera_x, mouse_x,)
 
 ?>
 
