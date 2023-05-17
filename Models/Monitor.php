@@ -1,5 +1,6 @@
 <?php
 
+
 class Monitor
 {
     public $type;

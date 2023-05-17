@@ -3,21 +3,21 @@
 require_once __DIR__ . '/Models/Computer.php';
 require_once __DIR__ . '/Models/Portable.php';
 require_once __DIR__ . '/Models/Desktop.php';
+include __DIR__ . '/Database/db.php';
+
+/* $computer = new Computer('processore_x', 'schedaMadre_x', 'hard_disk_x', 'ram_x', 'schedaVideo_X', 'tastiera_x', 'mouse_x');
+
+$computer->setType('');
+
+var_dump($computer->getType());
 
 
-$computer = new Computer('processore_x', 'schedaMadre_x', 'hard_disk_x', 'ram_x', 'schedaVideo_X', 'tastiera_x', 'mouse_x');
-var_dump($computer);
 
-$computer1 = new Portable('processore_y', 'schedaMadre_y', 'hard_disk_y', 'ram_y', 'schedaVideo_y', 'tastiera_y', 'mouse_y', 'batteria_y', 'webcam_y', 'microfono_y', 'display_y');
+ */
 
-$computer2 = new Desktop('processore_ß', 'schedaMadre_ß', 'hard_disk_ß', 'ram_ß', 'schedaVideo_ß', 'tastiera_ß', 'mouse_ß', 'case_x', 'speacker_ß', new Monitor('led', '120', '120hz', '3024px'), 'webcams_');
 
-$computers = [
-    $computer1,
-    $computer2
-];
 
-var_dump($computers);
+// var_dump($computers);
 ?>
 
 <!doctype html>
@@ -42,29 +42,46 @@ var_dump($computers);
 
     <main>
         <div class="container">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
+            <div class="row">
+                <?php foreach ($computers as $computer) : ?>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?= $computer->getType() ?>
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <?php foreach ($computer as  $item) : ?>
+                                        <?php if (is_string($item)) : ?>
+                                            <li class="list-group-item">
+                                                <?= $item ?>
+                                            </li>
+                                        <?php else : ?>
+                                            <li class="list-group-item">
+                                                <strong>MONITOR</strong>
+                                            </li>
+                                            <?php foreach ($item as $component) : ?>
+                                                <li class="list-group-item ps-5">
+                                                    <?= $component ?>
+                                                </li>
+                                            <?php endforeach; ?>
+
+                                        <?php endif ?>
+
+                                    <?php endforeach; ?>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
+
         </div>
 
     </main>
-
-
-
-
 
 
     <footer>

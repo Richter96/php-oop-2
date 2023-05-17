@@ -21,13 +21,16 @@ class Computer
         $this->keyboard = $keyboard;
         $this->mouse = $mouse;
     }
+
+
     public function setType() // ???? quando va utilizzata?
     {
         $this->type = 'computer';
     }
 
-    public function getType() // legge il parametro scritto
+
+    public function getType()
     {
         return $this->type;
     }
-}
+};

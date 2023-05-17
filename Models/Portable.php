@@ -16,13 +16,8 @@ class Portable extends Computer
         $this->microphone = $microphone;
         $this->display = $display;
     }
-
-    public function setType()
+    public function setType() // ???? quando va utilizzata?
     {
         $this->type = 'Laptop';
-    }
-    public function getType() // legge il parametro scritto
-    {
-        return $this->type;
     }
 }

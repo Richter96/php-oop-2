@@ -17,4 +17,9 @@ class Desktop extends Computer
         $this->monitor = $monitor;
         $this->external_webcam = $external_webcam;
     }
+
+    public function setType() // ???? quando va utilizzata?
+    {
+        $this->type = 'Desktop';
+    }
 }
