@@ -2,6 +2,7 @@
 
 class Computer
 {
+    protected $type;
     public $cpu;
     public $motherboard;
     public $hard_disk;
@@ -20,8 +21,13 @@ class Computer
         $this->keyboard = $keyboard;
         $this->mouse = $mouse;
     }
-    public function getComputerDetail() // ???? quando va utilizzata?
+    public function setType() // ???? quando va utilizzata?
     {
-        # code...
+        $this->type = 'computer';
+    }
+
+    public function getType() // legge il parametro scritto
+    {
+        return $this->type;
     }
 }
