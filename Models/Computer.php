@@ -10,7 +10,7 @@ class Computer
     public $gpu;
 
 
-    public function __construct($name, $cpu, $hard_disk, $ram, $gpu)
+    public function __construct(string $name, string $cpu, string $hard_disk, string $ram, string $gpu)
     {
         $this->name = $name;
         $this->cpu = $cpu;
