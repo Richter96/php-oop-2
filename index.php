@@ -43,11 +43,12 @@ var_dump($computer->getType());
     <main>
         <div class="container">
             <div class="row">
-                <?php foreach ($computers as $computer) : ?>
+                <?php foreach ($computers as $key => $computer) : ?>
                     <div class="col">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">
+                                    <?= $key ?>
                                     <?= $computer->getType() ?>
                                 </h5>
                             </div>

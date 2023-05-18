@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/../Trails/Monitor.php';
 
 class Computer
 {

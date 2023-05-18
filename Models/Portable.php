@@ -1,6 +1,5 @@
 <?php
 
-require __DIR__ . '/../Trails/Monitor.php';
 class Portable extends Computer
 {
     use Monitor;
