@@ -54,20 +54,18 @@ var_dump($computer->getType());
                             <div class="card-body">
                                 <ul class="list-group">
                                     <?php foreach ($computer as  $item) : ?>
-                                        <?php if (is_string($item)) : ?>
-                                            <li class="list-group-item">
-                                                <?= $item ?>
-                                            </li>
-                                        <?php else : ?>
-                                            <li class="list-group-item">
-                                                <strong>MONITOR</strong>
-                                            </li>
-                                            <?php foreach ($item as $component) : ?>
-                                                <li class="list-group-item ps-5">
-                                                    <?= $component ?>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        <?php endif ?>
+
+                                        <li class="list-group-item">
+                                            <?= $item ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                    <li class="list-group-item">
+                                        <strong>MONITOR</strong>
+                                    </li>
+                                    <?php foreach ($computer->getMonitor_as_array() as $component_monitor) : ?>
+                                        <li class="list-group-item ps-5">
+                                            <?= $component_monitor ?>
+                                        </li>
                                     <?php endforeach; ?>
 
                                 </ul>
