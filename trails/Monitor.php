@@ -1,7 +1,7 @@
 <?php
 
 
-class Monitor
+trait display_set
 {
     public $type;
     public $size;
@@ -14,5 +14,9 @@ class Monitor
         $this->size = $size;
         $this->herz = $herz;
         $this->resolution = $resolution;
+    }
+
+    public function setDisplaySet()
+    {
     }
 }

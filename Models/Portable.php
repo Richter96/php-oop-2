@@ -7,9 +7,9 @@ class Portable extends Computer
     public $microphone;
     public $display;
 
-    function __construct($cpu, $motherboard, $hard_disk, $ram, $gpu, $keyboard, $mouse, string $battery, string $webcam, string $microphone, string $display)
+    function __construct($name, $cpu, $hard_disk, $ram, $gpu, string $battery, string $webcam, string $microphone, string $display)
     {
-        parent::__construct($cpu, $motherboard, $hard_disk, $ram, $gpu, $keyboard, $mouse);
+        parent::__construct($name, $cpu, $hard_disk, $ram, $gpu);
 
         $this->battery = $battery;
         $this->webcam = $webcam;

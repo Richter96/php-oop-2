@@ -67,9 +67,7 @@ var_dump($computer->getType());
                                                     <?= $component ?>
                                                 </li>
                                             <?php endforeach; ?>
-
                                         <?php endif ?>
-
                                     <?php endforeach; ?>
 
                                 </ul>

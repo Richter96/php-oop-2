@@ -3,27 +3,24 @@
 class Computer
 {
     protected $type;
+    protected $name;
     public $cpu;
-    public $motherboard;
     public $hard_disk;
     public $ram;
     public $gpu;
-    public $keyboard;
-    public $mouse;
 
-    public function __construct($cpu, $motherboard, $hard_disk, $ram, $gpu, $keyboard, $mouse)
+
+    public function __construct($name, $cpu, $hard_disk, $ram, $gpu)
     {
+        $this->name = $name;
         $this->cpu = $cpu;
-        $this->motherboard = $motherboard;
         $this->hard_disk = $hard_disk;
         $this->ram = $ram;
         $this->gpu = $gpu;
-        $this->keyboard = $keyboard;
-        $this->mouse = $mouse;
     }
 
 
-    public function setType() // ???? quando va utilizzata?
+    public function setType()
     {
         $this->type = 'computer';
     }
