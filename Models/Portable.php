@@ -1,20 +1,21 @@
 <?php
 
+require __DIR__ . '/../Trails/Monitor.php';
 class Portable extends Computer
 {
+    use Monitor;
+
     public $battery;
     public $webcam;
     public $microphone;
-    public $display;
 
-    function __construct($name, $cpu, $hard_disk, $ram, $gpu, string $battery, string $webcam, string $microphone, string $display)
+    function __construct(string $name, string $cpu, string $hard_disk, string $ram, string $gpu, string $battery, string $webcam, string $microphone,)
     {
         parent::__construct($name, $cpu, $hard_disk, $ram, $gpu);
 
         $this->battery = $battery;
         $this->webcam = $webcam;
         $this->microphone = $microphone;
-        $this->display = $display;
     }
     public function setType() // ???? quando va utilizzata?
     {
